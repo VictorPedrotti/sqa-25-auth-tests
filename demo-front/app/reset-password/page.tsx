@@ -49,7 +49,7 @@ export default function ResetPassword() {
             if (isAxiosError(e)) {
               if (e.response?.status === 404) {
                 addToast({
-                  title: "Erro",
+                  title: "Erro",      // Caso o e-mail informado não esteja cadastrado, o sistema deve exibir uma mensagem de erro (“E-mail não encontrado”).
                   color: "danger",
                 });
                 return;

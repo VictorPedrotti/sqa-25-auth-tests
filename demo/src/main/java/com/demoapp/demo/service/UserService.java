@@ -19,6 +19,10 @@ public class UserService {
   }
 
   public boolean isPasswordValid(String password) {
+    //Adicionado caso seja consumida a API passando senha nula
+    if (password == null) {
+      return false;
+    }
     String passRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&]).{8,}$";
     return Pattern.matches(passRegex, password);
   }

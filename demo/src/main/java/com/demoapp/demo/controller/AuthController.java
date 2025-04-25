@@ -61,7 +61,7 @@ public class AuthController {
     if (!service.isPasswordValid(userDTO.getPassword())) {
       return ResponseEntity
           .status(422)
-          .body(new ErrorResponse("Senha inválida", 422));
+          .body(new ErrorResponse("Senha inválida", 422)); // ao digitar senha inválida cai aqui, mensagem deveria ser credenciais inválidas?
     }
 
     User user = service.findByEmail(userDTO.getEmail());

@@ -42,7 +42,7 @@ export default function SignUp() {
           }
           if (!validatePassword(data.password as string)) {
             setIsPasswordInvalid(true);
-            setPasswordErrorMessage("Senha inválida");
+            setPasswordErrorMessage("Senha inválida"); //  Se o usuário fornecer uma senha que não atenda esses critérios, mostrar a mensagem: “Senha não atende aos critérios mínimos de segurança”.
             return;
           }
           try {
